@@ -1,0 +1,300 @@
+def_class ::Shape {
+    def_private float !!radius;
+    def_public string !!name;
+    
+    def_public ::Shape(float !!r) {
+        !!name : "circle";
+        !!radius : !!r;
+    
+    }
+    def_public float def_getRadius() {
+        return !!radius;
+    }
+}
+
+def_class ::Rectangle {
+    def_private float !!width;
+    def_private float !!height;
+    def_protected bool !!isSquare;
+    def_protected float !!area;
+    
+    def_public ::Rectangle(float !!w, float !!h) {
+        !!width : !!w;
+        !!height : !!h;
+    }
+}
+
+int !!x;
+bool !!flag : true;
+float !!y : 3.1456r;
+string !!message : "Hello";
+int !!arr[3] : {1, 2, 3};          
+float !!matrix[2][2] : {{1.5r, 2.5r}, {3.5r, 4.5r}};     
+int !!cube[2][2][2] : {{{1,2},{3,4}},{{5,6},{7,8}}};
+int !!matrix2[2][3] : {{1,2,3},{4,5,6}};
+char !!ch: 'a';
+const int !!const : 3;
+int !!i : 0;
+int !!u : 10;
+int !!v : 3;
+int !!af : 5;
+int !!bf : 2;
+int !!cf : 4;
+const float !!floater : 34.345r;
+const string !!sir : "Proiect la LFAC";
+const char !!chaaar : 'D';
+int def_func2(int !!afs)
+{
+    int !!ttt : 23;
+    if(!!ttt < 25)
+    {
+        !!ttt : !!afs + 2;
+    }
+    else
+    {
+        !!ttt : !!afs - 2;
+    }
+    return !!ttt;
+}
+float def_fun3(float !!bfs)
+{
+    int !!i : 25;
+    if (!!i % 2 == 0)
+    {
+        !!bfs : !!bfs + 23.45r;
+    }
+    return !!bfs;
+}
+int def_func(int !!ef)
+{
+    return !!ef;
+}
+float def_anotherfunc(int !!x, float !!y, int !!z)
+{
+    if(!!x <= 5 and !!z >= 3)
+    {
+        !!y : (!!y * 2.45r)/1.23r;
+    }
+    return !!y;
+}
+begin_program
+    ::Shape !!circle1(5.0r);
+    ::Shape !!circle2(3.14r);
+    ::Rectangle !!rect1(4.0r,4.15r);
+    ::Rectangle !!rect2(3.0r,5.345r);
+    def_func2(37);
+    def_fun3(23.4r);
+    def_anotherfunc(12,13.45r,34);
+
+    TypeOf(!!ch);
+    Print(!!ch);
+
+    TypeOf(!!matrix[0][1]);
+    Print(!!matrix[0][1]);
+
+    TypeOf(!!matrix2);
+    Print(!!matrix2[0][1]);
+
+    int !!cdc : (!!u + !!v) * 2;
+    Print(!!cdc);
+
+    Print(!!message);
+    TypeOf(!!message);
+
+    Print(!!sir);
+
+    Print(5 + 3);
+    Print((5.23r + 23.45r)* 2.34r - 15.06r);
+    Print(2.34r + 56.05r);
+    Print(!!i + 2);
+    Print(!!u + !!v);
+    Print(!!u - !!v);
+    Print(!!u * !!v);
+    Print(!!u / !!v);
+    Print(!!u % !!v);
+
+    Print(!!u + !!v * 2);
+    Print((!!u + !!v) * 2);
+    Print(!!u * !!v + 5);
+
+    Print(!!af * !!bf + !!cf * !!v);
+    Print((!!af + !!bf) * (!!cf + !!v));
+    TypeOf((!!af + !!bf) * (!!cf + !!v));
+    Print(!!af * !!bf * !!cf);
+    Print(!!af + !!bf + !!cf);
+    Print((!!u + !!v) * !!af / !!bf);
+    Print(((!!af + !!bf) * !!cf) % !!v);
+    Print(!!u - !!v * !!bf + !!cf);
+
+    int !!y1 : 2;
+    int !!y2 : 4;
+    int !!y3 : (!!y1 + !!y2) * 2 + 30;
+    Print(!!y3);
+    int !!y4 : !!y1 + !!y2 * 2;
+    Print(!!y4);
+    Print((!!y1 + !!y2 * !!y3) % !!y4 + (!!y2 / 3 + !!y1) * !!y3);
+    int !!y5 : (!!y1 * !!y2) + !!y3 - (!!y1 % !!y2) * (!!y1 + !!y2);
+    Print(!!y5);
+
+    int !!xf : 4;
+    Print(!!xf + 3);
+    
+    int !!zf : 3;
+    Print(!!zf * 4 + 7);
+    TypeOf(!!zf * 4 + 7);
+    
+    float !!dffffff : 326.09r;
+    Print(!!dffffff * 2.12r - 2.45r);
+    
+    float !!aff : 3.1456r;
+    float !!bff : 2.5000r;
+    Print(!!aff + !!bff);
+    Print(!!aff * !!bff);
+    Print(!!aff / !!bff);
+    
+    int !!andr : (24 + 37) * 2 / 4;
+    Print(!!andr);
+
+    float !!cff : 1.5000r;
+    float !!ffffff : !!cff + 23.567r;
+    
+    Print((!!aff + !!bff) * !!cff);
+    Print(!!aff * !!bff + !!cff);
+    Print(!!aff + !!bff * !!cff);
+    Print(!!aff + !!bff * !!cff + 24.34r * ((!!aff + !!bff - !!cff) / 1.23r));
+
+    bool !!afff : true;
+    bool !!bfff : false;
+    Print(!!afff);
+    Print(!!!afff);
+    Print(!!bfff);
+    Print(!!afff and !!bfff);
+    Print(!!afff or !!bfff);
+    
+    bool !!x1 : true;
+    bool !!x2 : true;
+    Print(!!x1 and !!x2);
+
+    Print(!!af > !!bf);          
+    Print(!!af < !!cf);         
+    Print(!!af == !!bf);
+    Print(!!bf != !!cf); 
+    
+    Print(!!af + !!bf > 10);
+    TypeOf(!!af + !!bf > 10);
+    
+    Print(!!afff or (!!bfff and !!x1));
+    Print((!!af > !!bf) and (!!cf > !!bf));
+    Print((!!af < !!bf) and (!!cf > !!bf));
+
+    Print((!!af + !!bf) > !!cf); 
+    Print((!!af * !!bf) == !!cf * 2);
+    
+    bool !!test1 : !!zf > 5;     
+    bool !!test2 : !!af > !!bf; 
+    Print(!!test1);             
+    Print(!!test2);             
+    Print(!!test1 and !!test2);
+    
+    bool !!test3 : !!af > !!cf;  
+    bool !!test4 : !!bf > !!af;
+    Print(!!test3 and !!test4); 
+
+    Print(!!arr[0] * 32);
+    Print(!!arr[1]);
+    Print(-!!arr[1] + 10);
+    Print(!!arr[2]);
+    
+    int !!idx : 1;
+    Print(!!arr[2]);
+    Print(!!arr[!!idx] + 2 * 3 - 4);
+    Print(!!arr[!!idx + 1]);
+    Print(!!arr[1] >= 2);
+    TypeOf(!!arr[1] >= 2);
+    TypeOf((!!arr[1] * 10) / 2 + !!arr[0] * !!arr[1]);
+    int !!cex : (!!arr[1] * 10) / 2 + !!arr[0] * !!arr[1];
+    Print(!!cex);
+
+
+    Print(!!matrix2[0][1]);
+    Print(!!matrix2[1][0] - (4*2) + !!matrix2[1][1]);
+    TypeOf(!!matrix2[0][0]);
+
+    Print(-!!xf);
+    Print(!!matrix[0][0]);
+    Print(!!matrix[1][1]);
+    Print(!!matrix[0][0] * !!matrix[1][1] - !!matrix[1][0]);
+    
+    Print(!false);
+    Print(!!!flag);
+    
+    Print(!!cube[0][0][0]);
+    Print(!!cube[1][1][1]);
+    Print(!!cube[0][0][1] * !!cube[1][1][1] * !!cube[0][1][1]);
+    Print(-(!!cube[0][0][1] * !!cube[1][1][1] * !!cube[0][1][1]));
+    float !!ffff : 2.345r;
+    Print((!!ffff + 23.45r) * 2.34r);
+    Print(-!!ffff);
+    
+    char !!vect2[3] : { 'a','b','c'};
+    string !!vect3[3] : {"andreea","theo","lfac"};
+    Print(!!vect2[1]);
+    TypeOf(!!vect2[1]);
+    Print(!!vect3[2]);
+    TypeOf(!!vect3[2]);
+
+    int !!z : 10;
+    Print(!(!!z > 10));
+    Print(-(!!z + 3 * 4 - 3));
+    Print(!((!!z + 10) > 5));
+    TypeOf(!((!!z + 10) > 5));
+
+    int !!temp : 0;
+    Print(!!temp);
+    if(!!z <= 5)
+    {
+        !!temp : !!temp + 1;
+        Print(!!temp);
+        !!temp : (!!z * 10) * 2;
+        Print(!!temp);
+    }
+    else
+    {
+        char !!caracter : 'b';
+        string !!sir : "andreea";
+        !!z : 3;
+        Print(!!z);
+    }
+    int !!temp2 : 345;
+    if(!!z == 3 and !!temp != 0)
+    {
+        !!temp2 : ((!!temp2 - !!z) * 10) / 12;
+        Print(!!temp2);
+    }
+    Print(!!z);
+    int !!iter : 0;
+    while(!!z >= 1)
+    {
+        !!iter : !!iter + 3;
+        Print(!!iter);
+        !!z : !!z - 1;
+        Print(!!z);
+    }
+    Print(!!iter);
+    Print(!!z);
+    int !!vfg : 23;
+    for(int !!ii : 0; !!ii <= 3; !!ii : !!ii + 1)
+    {
+        int !!temp3 : 345;
+        Print(!!temp3 * 3 / 8);
+        !!temp3 : !!temp3 * 3 / 8;
+        if(!!temp3 <= 130)
+        {
+            !!temp3 : ((!!temp3 * !!z) / 13)+ 45 + !!z;
+            Print(!!temp3);
+        }
+        int !!temp4 : 21;
+        Print(!!temp3 * (!!temp4 / 2 + 34 * 3 - 23) * (!!temp3 + !!temp4 - 1));
+    }
+    return 0;
+end_program
